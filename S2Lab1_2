@@ -1,0 +1,79 @@
+using System.Text.Json;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Dictionary<int, string> dictionary = new Dictionary<int, string>()
+        {
+            { 1, "apple" },
+            { 2, "banana" },
+            { 3, "orange" },
+            { 4, "kiwi" },
+            { 5, "grape" },
+            { 6, "cherry" },
+            { 7, "apple" },
+            { 8, "pear" },
+            { 9, "watermelon" },
+            { 10, "strawberry" },
+            { 11, "kiwi" },
+            { 12, "pineapple" },
+            { 13, "mango" },
+            { 14, "lemon" },
+            { 15, "cherry" },
+            { 16, "grapefruit" },
+            { 17, "lime" },
+            { 18, "peach" },
+            { 19, "watermelon" },
+            { 20, "mango" }
+        };
+
+        Console.WriteLine("Вхідний словник:");
+        PrintDictionary(dictionary);
+
+        Dictionary<int, string> duplicates = FindDuplicates(dictionary);
+
+        Console.WriteLine("Знайдені дублікати:");
+        PrintDictionary(duplicates);
+
+        SaveDictionaryToJson(dictionary, @"C:\Users\SPL\Desktop\File\dictionary.json");
+
+        Console.ReadLine();
+    }
+
+    static void PrintDictionary<TKey, TValue>(Dictionary<TKey, TValue> dictionary)
+    {
+        foreach (var pair in dictionary)
+        {
+            Console.WriteLine(pair.Key + ": " + pair.Value);
+        }
+    }
+
+    static Dictionary<TKey, TValue> FindDuplicates<TKey, TValue>(Dictionary<TKey, TValue> dictionary)
+    {
+        var duplicates = new Dictionary<TKey, TValue>();
+        var uniqueValues = new HashSet<TValue>();
+
+        foreach (var pair in dictionary)
+        {
+            if (!uniqueValues.Add(pair.Value))
+            {
+                duplicates.Add(pair.Key, pair.Value);
+            }
+        }
+
+        return duplicates;
+    }
+
+    static void SaveDictionaryToJson<TKey, TValue>(Dictionary<TKey, TValue> dictionary, string fileName)
+    {
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true
+        };
+
+        string json = JsonSerializer.Serialize(dictionary, options);
+        File.WriteAllText(fileName, json);
+        Console.WriteLine("Словник збережено у файл: " + fileName);
+    }
+}
