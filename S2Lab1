@@ -1,0 +1,131 @@
+using System;
+using System.Collections.Generic;
+
+class CarParking
+{
+    private List<bool> parkingSpots;
+
+    public CarParking(int capacity)
+    {
+        parkingSpots = new List<bool>(capacity);
+        InitializeParkingSpots(capacity);
+    }
+
+    private void InitializeParkingSpots(int capacity)
+    {
+        Random random = new Random();
+
+        for (int i = 0; i < capacity; i++)
+        {
+            bool isOccupied = random.Next(2) == 0;
+            parkingSpots.Add(isOccupied);
+        }
+    }
+
+    public void Arrive()
+    {
+        int spotIndex = FindFirstAvailableSpot();
+
+        if (spotIndex != -1)
+        {
+            parkingSpots[spotIndex] = true;
+            Console.WriteLine("Автомобіль прибув і припаркований на місці: " + spotIndex);
+        }
+        else
+        {
+            Console.WriteLine("Немає вільних місць для паркування.");
+        }
+    }
+
+    public void Depart(int spotIndex)
+    {
+        if (IsValidSpotIndex(spotIndex))
+        {
+            parkingSpots[spotIndex] = false;
+            Console.WriteLine("Автомобіль виїхав з місця: " + spotIndex);
+        }
+        else
+        {
+            Console.WriteLine("Неправильний індекс місця.");
+        }
+    }
+
+    private int FindFirstAvailableSpot()
+    {
+        for (int i = 0; i < parkingSpots.Count; i++)
+        {
+            if (!parkingSpots[i])
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    private bool IsValidSpotIndex(int spotIndex)
+    {
+        return spotIndex >= 0 && spotIndex < parkingSpots.Count;
+    }
+
+    public void PrintParkingStatus()
+    {
+        Console.WriteLine("Статус паркування:");
+        for (int i = 0; i < parkingSpots.Count; i++)
+        {
+            string spotStatus = parkingSpots[i] ? "Зайнято" : "Порожньо";
+            Console.WriteLine("Місце " + i + ": " + spotStatus);
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        try
+        {
+            Console.WriteLine("Введіть кількість місць автостоянки:");
+            int capacity = int.Parse(Console.ReadLine());
+
+            CarParking carParking = new CarParking(capacity);
+
+            while (true)
+            {
+                Console.WriteLine("1. Заїхати");
+                Console.WriteLine("2. Виїхати");
+                Console.WriteLine("3. Показати статус паркування");
+                Console.WriteLine("4. Вихід");
+
+                Console.WriteLine("Введіть ваш вибір:");
+                int choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        carParking.Arrive();
+                        break;
+                    case 2:
+                        Console.WriteLine("Введіть індекс місця для виїзду:");
+                        int spotIndex = int.Parse(Console.ReadLine());
+                        carParking.Depart(spotIndex);
+                        break;
+                    case 3:
+                        carParking.PrintParkingStatus();
+                        break;
+                    case 4:
+                        return;
+                    default:
+                        Console.WriteLine("Неправильний вибір.");
+                        break;
+                }
+
+                Console.WriteLine();
+            }
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Неправильний формат");
+        }
+    }
+}
