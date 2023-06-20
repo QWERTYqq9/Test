@@ -1,0 +1,14 @@
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string[] strings = { "apple", "banana", "orange", "kiwi", "grape" };
+
+        int sumOfLengths = strings.Sum(s => s.Length);
+
+        Console.WriteLine("Сума довжин усіх рядків: " + sumOfLengths);
+    }
+}
