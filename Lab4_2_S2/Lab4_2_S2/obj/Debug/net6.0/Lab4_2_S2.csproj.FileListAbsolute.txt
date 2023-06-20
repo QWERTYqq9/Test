@@ -1,0 +1,15 @@
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\obj\Debug\net6.0\Lab4_2_S2.csproj.AssemblyReference.cache
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\obj\Debug\net6.0\Lab4_2_S2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\obj\Debug\net6.0\Lab4_2_S2.AssemblyInfoInputs.cache
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\obj\Debug\net6.0\Lab4_2_S2.AssemblyInfo.cs
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\obj\Debug\net6.0\Lab4_2_S2.csproj.CoreCompileInputs.cache
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\bin\Debug\net6.0\Lab4_2_S2.exe
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\bin\Debug\net6.0\Lab4_2_S2.deps.json
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\bin\Debug\net6.0\Lab4_2_S2.runtimeconfig.json
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\bin\Debug\net6.0\Lab4_2_S2.dll
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\bin\Debug\net6.0\Lab4_2_S2.pdb
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\obj\Debug\net6.0\Lab4_2_S2.dll
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\obj\Debug\net6.0\refint\Lab4_2_S2.dll
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\obj\Debug\net6.0\Lab4_2_S2.pdb
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\obj\Debug\net6.0\Lab4_2_S2.genruntimeconfig.cache
+C:\Users\SPL\source\repos\Lab4_2_S2\Lab4_2_S2\obj\Debug\net6.0\ref\Lab4_2_S2.dll
